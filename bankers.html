@@ -1,0 +1,82 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Construction Tool Manager</title>
+  <link rel="stylesheet" href="bankers.css">
+</head>
+<body>
+  <div class="overlay">
+    <h1>Construction Tool Manager</h1>
+    
+    <div class="status-panel">
+      <h2>System Status</h2>
+      <div id="safetyStatus"></div>
+      <div id="availableTools"></div>
+    </div>
+
+    <div class="crew-management">
+      <h2>Crew Management</h2>
+      <table id="crewTable">
+        <thead>
+          <tr>
+            <th>Crew</th>
+            <th>Max</th>
+            <th>Allocated</th>
+            <th>Need</th>
+            <th>Can Complete?</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <div class="add-crew">
+        <input type="text" id="newCrewName" placeholder="New crew name">
+        <button onclick="addCrew()">Add Crew</button>
+      </div>
+    </div>
+
+    <div class="tool-request">
+      <h2>Tool Request</h2>
+      <div>
+        <label for="crewSelect">Select Crew:</label>
+        <select id="crewSelect"></select>
+        </div>
+      <div class="tool-inputs">
+        <div class="tool-input">
+          <label for="drills">Drills:</label>
+          <input type="number" id="drills" value="0" min="0">
+        </div>
+        <div class="tool-input">
+          <label for="hammers">Hammers:</label>
+          <input type="number" id="hammers" value="0" min="0">
+        </div>
+        <div class="tool-input">
+          <label for="saws">Saws:</label>
+          <input type="number" id="saws" value="0" min="0">
+        </div>
+        <div class="tool-input">
+          <label for="ladders">Ladders:</label>
+          <input type="number" id="ladders" value="0" min="0">
+        </div>
+        <div class="tool-input">
+          <label for="screwdrivers">Screwdrivers:</label>
+          <input type="number" id="screwdrivers" value="0" min="0">
+        </div>
+        <div class="tool-input">
+          <label for="power">Power:</label>
+          <input type="number" id="power" value="0" min="0">
+        </div>
+      </div>
+      <button onclick="requestTools()">Request Tools</button>
+      <button onclick="releaseTools()">Release Tools</button>
+    </div>
+
+    <div id="messageBox" class="message-box"></div>
+  </div>
+  <script src="bankers.js"></script>
+</body>
+</html>
